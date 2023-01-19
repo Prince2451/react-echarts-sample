@@ -8,15 +8,16 @@ const App: React.FC = () => {
   const getBarChartOptions = (): ECOption => {
     const xAxisLabels: string[] = [];
     const malicAcidForAlcohol: Record<string, number> = {};
-    let totalMalicAcid = 0;
+    const totalMalicAcidForAlcohol: Record<string, number> = {};
     data.forEach((ele) => {
       const alcoholValue = ele.Alcohol.toString();
       if (!xAxisLabels.includes(alcoholValue)) {
         xAxisLabels.push(alcoholValue);
         malicAcidForAlcohol[alcoholValue] = 0;
+        totalMalicAcidForAlcohol[alcoholValue] = 0;
       }
       malicAcidForAlcohol[alcoholValue] += ele["Malic Acid"];
-      totalMalicAcid += ele["Malic Acid"];
+      totalMalicAcidForAlcohol[alcoholValue]++;
     });
 
     return {
@@ -24,7 +25,9 @@ const App: React.FC = () => {
         {
           type: "bar",
           data: xAxisLabels.map((ele) =>
-            (malicAcidForAlcohol[ele] / totalMalicAcid).toFixed(2)
+            (malicAcidForAlcohol[ele] / totalMalicAcidForAlcohol[ele]).toFixed(
+              2
+            )
           ),
         },
       ],

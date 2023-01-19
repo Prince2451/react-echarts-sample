@@ -41,4 +41,4 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Charts Screenshot
 
-![image](https://user-images.githubusercontent.com/43629426/213368117-8e8f3cf0-68bb-4f50-89dd-ea8bad1633cf.png)
+![image](https://user-images.githubusercontent.com/43629426/213371915-f5be2044-d880-403d-b0e1-36e6ac65680d.png)

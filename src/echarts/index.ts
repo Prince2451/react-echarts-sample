@@ -21,6 +21,7 @@ import {
   TooltipComponentOption,
 } from "echarts";
 
+// Type for available options
 type ECOption = echarts.ComposeOption<
   | BarSeriesOption
   | ScatterSeriesOption
